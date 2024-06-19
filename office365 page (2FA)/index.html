@@ -1,0 +1,1311 @@
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" translate="no" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="refresh" content="10;URL='login.html'">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="shortcut icon" href="./assets/favicon-home.ico" type="image/x-icon">
+    <title>Login</title>
+    <style>
+      @font-face {
+        font-family: FabricMDL2Icons;
+        src: url('//res.cdn.office.net/owamail/20240329006.15/resources/fonts/o365icons-mdl2.woff') format('woff');
+        font-weight: 400;
+        font-style: normal
+      }
+
+      @font-face {
+        font-family: office365icons;
+        src: url('//res.cdn.office.net/owamail/20240329006.15/resources/fonts/office365icons.woff?') format('woff');
+        font-weight: 400;
+        font-style: normal
+      }
+
+      #loadingScreen {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #fff
+      }
+
+      #loadingLogo {
+        position: fixed;
+        top: calc(50vh - 90px);
+        left: calc(50vw - 90px);
+        width: 180px;
+        height: 180px
+      }
+
+      #MSLogo {
+        position: fixed;
+        bottom: 36px;
+        left: calc(50vw - 50px)
+      }
+
+      .dark #loadingScreen {
+        background-color: #333
+      }
+
+      .darkNew #loadingScreen {
+        background-color: #1f1f1f
+      }
+    </style>
+    <link integrity="sha256-QBcJvIuNMh6OK2g9+MmeAGq0NbMf9sR/Z7LqK9xoQp0=" rel="preload" href="//res.cdn.office.net/owamail/hashed-v1/scripts/owa.mail.runtime.b3bc96d6.js" as="script" crossorigin="anonymous">
+    <link integrity="sha256-U1GF6CUIMepNmVEJVlDNOFmJZDIXDBPWf/q6ecWGFTI=" rel="preload" href="//res.cdn.office.net/owamail/hashed-v1/scripts/owa.mailindex.f527938b.js" as="script" crossorigin="anonymous">
+    <link integrity="sha256-1VI+mzQ2x5FdvqYC3g8exu7XENujBqdNc7WHsjClN4o=" rel="preload" href="//res.cdn.office.net/owamail/hashed-v1/scripts/owa.544067.m.9d6911a8.js" as="script" crossorigin="anonymous">
+    <link integrity="sha256-Ux47soi0e5oKTITLiCDa3LN5krUU52S2mynddYwph1c=" rel="preload" href="//res.cdn.office.net/owamail/hashed-v1/scripts/owa.AppBoot.m.dd6d7241.css" as="style" crossorigin="anonymous">
+    <link integrity="sha256-GyAqVgIbkkSII6fIoHA93VyB5IctTK2ibbd+SBsw+sU=" rel="preload" href="//res.cdn.office.net/owamail/hashed-v1/scripts/owa.AppBoot.m.7bd2e26d.js" as="script" crossorigin="anonymous">
+    <link integrity="sha256-pHYsIp2pNCG0pa6ntWQl5gRoslS9ZiF2Y9uI2MszN4o=" rel="preload" href="//res.cdn.office.net/owamail/hashed-v1/scripts/owa.542398.m.839d5e2c.js" as="script" crossorigin="anonymous">
+    <link integrity="sha256-66PZzAiyW5ERuernravMUG0hjluLUlfCS9FGez+P3oM=" rel="preload" href="//res.cdn.office.net/owamail/hashed-v1/scripts/owa.778996.m.614fd20f.js" as="script" crossorigin="anonymous">
+    <link integrity="sha256-QRkFmyKdL0rkE3Yoi4oJTqBsHieyVwUd+6LKwfM6Ero=" rel="preload" href="//res.cdn.office.net/owamail/hashed-v1/scripts/owa.103869.m.6b7f86d9.js" as="script" crossorigin="anonymous">
+    <link integrity="sha256-/iQ5/ltcDeairMLLYdqzkUpfAbubouG+uq1W2QqgKvY=" rel="preload" href="//res.cdn.office.net/owamail/hashed-v1/scripts/owa.896847.m.3b825bb3.js" as="script" crossorigin="anonymous">
+    <link integrity="sha256-oVdqPyiY8/Gwz4zsKSPi/X6Qa0KfU76jAgkHmYgDZGs=" rel="preload" href="//res.cdn.office.net/owamail/hashed-v1/scripts/owa.407663.m.343c241b.js" as="script" crossorigin="anonymous">
+    <link integrity="sha256-E9rgQKrg4l+ud4BU5z8HfTtDOiD1HYbUCSs04lN+Ueg=" rel="preload" href="//res.cdn.office.net/owamail/hashed-v1/scripts/owa.741001.m.cae45db0.js" as="script" crossorigin="anonymous">
+    <link integrity="sha256-BKJsZeHWx5U2VNqWmArtTzI8+ElqzB0+1adEw3E63RU=" rel="preload" href="//res.cdn.office.net/owamail/hashed-v1/scripts/owa.209952.m.31277333.js" as="script" crossorigin="anonymous">
+    <link integrity="sha256-382/NxV9twGZKDgcPbLFSLGB1oXhfUAzpxiy+KqaDUY=" rel="preload" href="//res.cdn.office.net/owamail/hashed-v1/scripts/owa.6014.m.1950f0f4.js" as="script" crossorigin="anonymous">
+    <link integrity="sha256-uGEu7/QdUu/V5aD0kjhu2wIs2J3HxZvFoHWWdKfHKAQ=" rel="preload" href="//res.cdn.office.net/owamail/hashed-v1/scripts/owa.112988.m.e6971702.js" as="script" crossorigin="anonymous">
+    <link integrity="sha256-eMGTwAD3FXswHZuBHzdtlFe8F20Yy9CdQrOvraJuT90=" rel="preload" href="//res.cdn.office.net/owamail/hashed-v1/scripts/owa.981965.m.f2da0c87.js" as="script" crossorigin="anonymous">
+    <link integrity="sha256-LNfLfw/WmDFRPHOzocL/Mrjwc+NLEk53JleHmDRXWXY=" rel="preload" href="//res.cdn.office.net/owamail/hashed-v1/scripts/owa.344475.m.5191e6cf.js" as="script" crossorigin="anonymous">
+    <link integrity="sha256-XFUa0dO+haMVLN8tWAnLY8dkSXDQIvYvIkpRYyK+sQE=" rel="preload" href="//res.cdn.office.net/owamail/hashed-v1/scripts/owa.147583.m.294f5cee.js" as="script" crossorigin="anonymous">
+    <link integrity="sha256-3P5sNzHTDjI1hAmBtB4amjbjgQqtdGl9M0PTH1Ex7OE=" rel="preload" href="//res.cdn.office.net/owamail/hashed-v1/scripts/owa.704588.m.95ef63d9.js" as="script" crossorigin="anonymous">
+    <link integrity="sha256-xCbtLcW0Suq4jzwCrlHhIlZBAzhiZoNeg2WQWazLsL8=" rel="preload" href="//res.cdn.office.net/owamail/hashed-v1/scripts/owa.449837.m.cd926211.js" as="script" crossorigin="anonymous">
+    <link integrity="sha256-PsSAholnyMWgq2mmp/jyM3a53x1yuOGJ0Zu6cDkS8O8=" rel="preload" href="//res.cdn.office.net/owamail/hashed-v1/scripts/owa.508748.m.ff6b2857.js" as="script" crossorigin="anonymous">
+    <link integrity="sha256-uhySzx7n5j/L35Hgj2RB4NKToCEwvuwL+JUm/7DPkbc=" rel="preload" href="//res.cdn.office.net/owamail/hashed-v1/scripts/owa.701959.m.6e3c5e46.js" as="script" crossorigin="anonymous">
+    <link integrity="sha256-HXylBKmmrKTeiFplgm2Jau8691z7Jpxgqu+E+LWvk84=" rel="preload" href="//res.cdn.office.net/owamail/hashed-v1/scripts/owa.498108.m.c0da1f2a.js" as="script" crossorigin="anonymous">
+    <link integrity="sha256-tkWZIgLg75C1aua/8l7fck1qqPAMPYkIiXpvzH+t6vc=" rel="preload" href="//res.cdn.office.net/owamail/hashed-v1/scripts/owa.939129.m.b5bea154.js" as="script" crossorigin="anonymous">
+    <link integrity="sha256-CojIbDiRY0kg0idWNXQbkF6nrlDOdGXEu7pA8O20pPc=" rel="preload" href="//res.cdn.office.net/owamail/hashed-v1/scripts/owa.709077.m.99fbd41e.js" as="script" crossorigin="anonymous">
+    <link integrity="sha256-fd9NMSYwHz9hMrGTV9BjZRrA3lyUwJeTmV8+B0xT4eM=" rel="preload" href="//res.cdn.office.net/owamail/hashed-v1/scripts/owa.MailBoot.m.41fc7c39.css" as="style" crossorigin="anonymous">
+    <link integrity="sha256-cfwPOLM6pxA/9nfAPnioRD/ho3r+Os/86ctMMUe0bLY=" rel="preload" href="//res.cdn.office.net/owamail/hashed-v1/scripts/owa.MailBoot.m.2800d550.js" as="script" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://res.cdn.office.net/owamail/hashed-v1/scripts/owa.AppBoot.m.dd6d7241.css" crossorigin="anonymous">
+    <style type="text/css">
+      .dQ8XLMIyNxl8MAYqMsUZFQ\=\= {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        border-spacing: 0;
+        white-space: nowrap;
+        line-height: normal
+      }
+
+      .dQ8XLMIyNxl8MAYqMsUZFQ\=\= .hpyHhmSe9hmk5gopLr9a5Q\=\=,
+      .dQ8XLMIyNxl8MAYqMsUZFQ\=\= a.rOy\+Hn8kiD5J9v5VDCE3Dg\=\= {
+        vertical-align: top
+      }
+
+      .aU8N30IM3GcKO4KKz8lgNA\=\= {
+        display: none !important
+      }
+
+      .removeFocusOutline :focus {
+        outline: none;
+        box-shadow: none !important
+      }
+
+      .clgiLVKPzugZZns0LiPTqw\=\=,
+      .SXGDf\/jjzN5Yzn8eL0wHjg\=\= {
+        display: block;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        min-width: 48px;
+        text-align: center;
+        cursor: pointer;
+        outline-offset: -1px
+      }
+
+      @media (-ms-high-contrast:active),
+      (forced-colors:active) {
+
+        .clgiLVKPzugZZns0LiPTqw\=\=:focus,
+        .clgiLVKPzugZZns0LiPTqw\=\=:hover+.icon,
+        .SXGDf\/jjzN5Yzn8eL0wHjg\=\=:focus,
+        .SXGDf\/jjzN5Yzn8eL0wHjg\=\=:hover+.icon {
+          -ms-high-contrast-adjust: none;
+          forced-color-adjust: none;
+          background-color: Highlight !important;
+          color: highlightText !important
+        }
+      }
+
+      .clgiLVKPzugZZns0LiPTqw\=\=:hover,
+      .SXGDf\/jjzN5Yzn8eL0wHjg\=\=:hover {
+        -webkit-transition: background-color .467s cubic-bezier(.1, .9, .2, 1) 34ms;
+        transition: background-color .467s cubic-bezier(.1, .9, .2, 1) 34ms
+      }
+
+      .SXGDf\/jjzN5Yzn8eL0wHjg\=\=,
+      .BiD096xkmK8Uxwc5MTuOlw\=\= {
+        display: block;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        min-width: 48px;
+        text-align: center;
+        cursor: default
+      }
+
+      @media (-ms-high-contrast:active),
+      (forced-colors:active) {
+
+        .SXGDf\/jjzN5Yzn8eL0wHjg\=\=:focus,
+        .SXGDf\/jjzN5Yzn8eL0wHjg\=\=:hover+.icon,
+        .BiD096xkmK8Uxwc5MTuOlw\=\=:focus,
+        .BiD096xkmK8Uxwc5MTuOlw\=\=:hover+.icon {
+          -ms-high-contrast-adjust: none;
+          forced-color-adjust: none
+        }
+      }
+
+      .clgiLVKPzugZZns0LiPTqw\=\= {
+        background: transparent;
+        border-width: 0;
+        width: auto;
+        height: 100%;
+        box-sizing: border-box;
+        overflow: visible
+      }
+
+      .clgiLVKPzugZZns0LiPTqw\=\=,
+      .clgiLVKPzugZZns0LiPTqw\=\= span[class*=" ms-Icon--"],
+      .clgiLVKPzugZZns0LiPTqw\=\= span[class^=ms-Icon--] {
+        line-height: 48px
+      }
+
+      @media (-ms-high-contrast:active),
+      (forced-colors:active) {
+
+        .clgiLVKPzugZZns0LiPTqw\=\=:focus+.icon,
+        .clgiLVKPzugZZns0LiPTqw\=\=:hover {
+          -ms-high-contrast-adjust: none;
+          forced-color-adjust: none;
+          background-color: Highlight !important;
+          color: highlightText !important
+        }
+      }
+
+      .BiD096xkmK8Uxwc5MTuOlw\=\= {
+        background: transparent;
+        border-width: 0;
+        width: auto;
+        height: 100%;
+        box-sizing: border-box;
+        line-height: 48px;
+        overflow: visible;
+        cursor: default
+      }
+
+      .BiD096xkmK8Uxwc5MTuOlw\=\= span[class*=" ms-Icon--"],
+      .BiD096xkmK8Uxwc5MTuOlw\=\= span[class^=ms-Icon--] {
+        line-height: 48px
+      }
+
+      @media (-ms-high-contrast:active),
+      (forced-colors:active) {
+
+        .BiD096xkmK8Uxwc5MTuOlw\=\=:focus+.icon,
+        .BiD096xkmK8Uxwc5MTuOlw\=\=:hover {
+          -ms-high-contrast-adjust: none;
+          forced-color-adjust: none
+        }
+      }
+
+      .RGSb\/1c4ex9CM0as0oaLQA\=\= {
+        display: inherit
+      }
+
+      .\/l2PApUbI5EhJK0cmfHXqg\=\= {
+        min-width: 68px
+      }
+
+      .SXGDf\/jjzN5Yzn8eL0wHjg\=\= {
+        line-height: 48px
+      }
+
+      .bfWNEPs24dESqyqDnh\/7tA\=\= {
+        display: inline-block;
+        vertical-align: middle;
+        align-self: center;
+        background-color: currentColor;
+        margin-left: 16px;
+        margin-right: 8px;
+        height: 28px;
+        width: 1px
+      }
+
+      html[dir=rtl] .bfWNEPs24dESqyqDnh\/7tA\=\= {
+        margin-right: 16px;
+        margin-left: 8px
+      }
+
+      .hpyHhmSe9hmk5gopLr9a5Q\=\= {
+        display: inline-block;
+        font-weight: 600;
+        font-family: SegoeUI-SemiBold-final, Segoe UI Semibold, SegoeUI-Regular-final, Segoe UI, "Segoe UI Web (West European)", Segoe, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, Tahoma, Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        line-height: 48px;
+        -webkit-font-smoothing: antialiased
+      }
+
+      .AzzTpbJF15SioND4vylW8A\=\= {
+        box-shadow: none !important
+      }
+
+      .yvHsK6IvuQovPfJmcAYOOg\=\= {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        width: 48px;
+        height: 48px
+      }
+
+      .yvHsK6IvuQovPfJmcAYOOg\=\= a:focus-visible {
+        outline-offset: 11px
+      }
+
+      .yvHsK6IvuQovPfJmcAYOOg\=\= img {
+        width: 24px;
+        height: 24px;
+        top: 12px;
+        left: 12px
+      }
+
+      .UbbNU\+CJSypYHluHed61kg\=\= {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 24px;
+        margin-top: 13px;
+        margin-left: 6px
+      }
+
+      .UbbNU\+CJSypYHluHed61kg\=\=:before {
+        vertical-align: top
+      }
+
+      .q8AbQOBpuy93yBfTeGfNaw\=\= {
+        margin-left: 14px;
+        margin-right: 14px;
+        height: 25px;
+        margin-top: 12px;
+        border-right: 1px solid
+      }
+
+      html[dir=rtl] .UbbNU\+CJSypYHluHed61kg\=\= {
+        margin-left: 0;
+        margin-right: 6px
+      }
+
+      .e\/Vl0j0zHQMhZT1vQ6J\+SQ\=\= {
+        height: 100%;
+        display: flex;
+        vertical-align: middle;
+        outline-offset: -1px;
+        padding: 0 12px 0 8px;
+        text-decoration: none
+      }
+
+      .e\/Vl0j0zHQMhZT1vQ6J\+SQ\=\= a {
+        display: flex;
+        text-decoration: none;
+        color: inherit
+      }
+
+      html[dir=rtl] .e\/Vl0j0zHQMhZT1vQ6J\+SQ\=\= {
+        padding: 0 8px 0 12px
+      }
+
+      ._3rJAyyAtPSCl0uoYr\+wuLA\=\= {
+        line-height: 48px;
+        height: 100%;
+        display: inline-block;
+        vertical-align: top;
+        padding-left: 8px
+      }
+
+      html[dir=rtl] ._3rJAyyAtPSCl0uoYr\+wuLA\=\= {
+        padding-right: 8px;
+        padding-left: 0
+      }
+
+      .rOy\+Hn8kiD5J9v5VDCE3Dg\=\= {
+        max-width: 200px;
+        max-height: 48px;
+        overflow: hidden;
+        line-height: 48px;
+        font-size: 0;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center
+      }
+
+      .rOy\+Hn8kiD5J9v5VDCE3Dg\=\=:focus-visible {
+        outline-offset: -2px
+      }
+
+      .rOy\+Hn8kiD5J9v5VDCE3Dg\=\= img {
+        max-width: 200px;
+        max-height: 48px;
+        border-style: none !important;
+        vertical-align: middle
+      }
+
+      .tP6UdQAxefBu0rqv2chMeg\=\= img {
+        width: auto;
+        height: 24px
+      }
+
+      @media (-ms-high-contrast:none),
+      screen and (-ms-high-contrast:active) {
+        .tP6UdQAxefBu0rqv2chMeg\=\= img {
+          max-width: 200px;
+          max-height: none;
+          min-width: 160px;
+          width: 100%;
+          height: 24px
+        }
+      }
+
+      @media (min-width:640px) {
+        .H7wt1\/T7kbyfSRNZ2JzVLA\=\= {
+          max-width: 176px;
+          text-decoration: none
+        }
+      }
+
+      .\/B1n\/h6ibI5wVz7jdDIP0A\=\= {
+        height: 100%;
+        max-width: 176px;
+        display: flex
+      }
+
+      .HcKMEYhmL4uLyG\+K4hy8pg\=\= {
+        text-align: right;
+        vertical-align: middle;
+        display: table-cell;
+        overflow: hidden;
+        max-width: 120px;
+        font-size: 14px;
+        font-family: SegoeUI-SemiLight-final, Segoe UI Semilight, SegoeUI-Regular-final, Segoe UI, "Segoe UI Web (West European)", Segoe, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, Tahoma, Helvetica, Arial, sans-serif;
+        text-overflow: ellipsis;
+        word-break: break-all;
+        white-space: nowrap;
+        margin-left: 4px
+      }
+
+      .HcKMEYhmL4uLyG\+K4hy8pg\=\=>span {
+        padding-left: 4px;
+        display: none
+      }
+
+      .U6Cnfo0RjXJ8UEwXhZV8mQ\=\= {
+        text-align: left;
+        display: block;
+        overflow: hidden;
+        max-width: 160px;
+        font-size: 13px;
+        font-family: SegoeUI-Regular-final, Segoe UI, "Segoe UI Web (West European)", Segoe, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, Tahoma, Helvetica, Arial, sans-serif;
+        text-overflow: ellipsis;
+        word-break: break-all;
+        white-space: nowrap;
+        line-height: 48px
+      }
+
+      .U6Cnfo0RjXJ8UEwXhZV8mQ\=\=>span {
+        padding-left: 12px;
+        padding-right: 4px;
+        display: none
+      }
+
+      html[dir=rtl] .HcKMEYhmL4uLyG\+K4hy8pg\=\= {
+        text-align: left
+      }
+
+      html[dir=rtl] .HcKMEYhmL4uLyG\+K4hy8pg\=\=>span {
+        padding-left: 0;
+        padding-right: 4px
+      }
+
+      html[dir=rtl] .U6Cnfo0RjXJ8UEwXhZV8mQ\=\=>span {
+        padding-left: 4px;
+        padding-right: 12px
+      }
+
+      .NK6YQ060InuEH1W1LbFJ4Q\=\= {
+        display: table-cell;
+        border-left-width: 0 !important;
+        vertical-align: middle;
+        display: flex;
+        align-items: center;
+        justify-content: center
+      }
+
+      html[dir=rtl] .NK6YQ060InuEH1W1LbFJ4Q\=\= {
+        border-right-width: 0 !important
+      }
+
+      .x03Rvs3MQ7Id948TyiIkCQ\=\= {
+        overflow: hidden;
+        display: inline-block;
+        border-radius: 50%;
+        vertical-align: middle;
+        font-size: 6px
+      }
+
+      .x03Rvs3MQ7Id948TyiIkCQ\=\= .ms-Persona {
+        right: 2px;
+        top: -2px
+      }
+
+      .x03Rvs3MQ7Id948TyiIkCQ\=\= .ms-Persona .ms-Image-image {
+        overflow: hidden;
+        top: 0
+      }
+
+      html[dir=rtl] .x03Rvs3MQ7Id948TyiIkCQ\=\= .ms-Persona {
+        left: 2px;
+        right: 0
+      }
+
+      .\+gKDxCURR5euwhVW2NK21g\=\= {
+        overflow: hidden;
+        display: inline-block;
+        border: thin solid;
+        border-radius: 50%;
+        vertical-align: middle;
+        font-size: 6px
+      }
+
+      .u85SIhgERLuqcMUbt2s66A\=\= {
+        border-radius: 50%;
+        line-height: 1 !important
+      }
+
+      .u85SIhgERLuqcMUbt2s66A\=\=:before {
+        margin-top: .4em
+      }
+
+      .SPrdsmCpZYS0tgvvd0cRgQ\=\= {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        font-family: SegoeUI-Regular-final, Segoe UI, "Segoe UI Web (West European)", Segoe, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, Tahoma, Helvetica, Arial, sans-serif;
+        border: 1px solid;
+        box-sizing: border-box;
+        border-radius: 50%;
+        line-height: 1 !important
+      }
+
+      .SPrdsmCpZYS0tgvvd0cRgQ\=\=:before {
+        margin-top: .4em
+      }
+
+      .x03Rvs3MQ7Id948TyiIkCQ\=\=,
+      .u85SIhgERLuqcMUbt2s66A\=\=,
+      .\+gKDxCURR5euwhVW2NK21g\=\= {
+        width: 32px;
+        height: 32px
+      }
+
+      .ieRo\/OqPYB7kffRFKx2c9w\=\= {
+        align-items: center;
+        justify-content: space-between;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        height: 100%
+      }
+
+      ._25CqRVKwE38X5RHExD4IyA\=\= {
+        display: flex;
+        flex: 1 0 auto;
+        height: 100%
+      }
+
+      ._1tJrEjbv1Qkvxc\/P7r3tZg\=\= {
+        display: flex;
+        justify-content: flex-start
+      }
+
+      .S3TWafQDKD\+3UQM7Jnziug\=\= {
+        display: flex;
+        flex: 1 0 auto;
+        justify-content: center
+      }
+
+      ._16lUvVUJZw68Zc4vFo8oMQ\=\= {
+        display: flex;
+        justify-content: flex-end
+      }
+
+      .HV6lC9J8OUFpKJjfAr1Asw\=\= {
+        display: flex;
+        flex: 0 0 auto
+      }
+
+      .Bh46b1rd8BrU4zolL9RzUg\=\= {
+        height: 100%;
+        line-height: 48px;
+        display: flex
+      }
+
+      .hdkWCzc6sRQuamFV07Y3xQ\=\= {
+        right: 24px;
+        top: 8px
+      }
+
+      html[dir=rtl] .hdkWCzc6sRQuamFV07Y3xQ\=\= {
+        right: 0;
+        left: 24px
+      }
+
+      @-moz-document url-prefix() {
+        .clgiLVKPzugZZns0LiPTqw\=\=:focus {
+          outline: 1px dotted
+        }
+      }
+
+      #O365_NavHeader abbr,
+      #O365_NavHeader address,
+      #O365_NavHeader article,
+      #O365_NavHeader aside,
+      #O365_NavHeader audio,
+      #O365_NavHeader b,
+      #O365_NavHeader blockquote,
+      #O365_NavHeader body,
+      #O365_NavHeader body :focus,
+      #O365_NavHeader body div,
+      #O365_NavHeader caption,
+      #O365_NavHeader cite,
+      #O365_NavHeader code,
+      #O365_NavHeader dd,
+      #O365_NavHeader del,
+      #O365_NavHeader details,
+      #O365_NavHeader dfn,
+      #O365_NavHeader dl,
+      #O365_NavHeader dt,
+      #O365_NavHeader em,
+      #O365_NavHeader fieldset,
+      #O365_NavHeader figure,
+      #O365_NavHeader footer,
+      #O365_NavHeader form,
+      #O365_NavHeader h1,
+      #O365_NavHeader h2,
+      #O365_NavHeader h3,
+      #O365_NavHeader h4,
+      #O365_NavHeader h5,
+      #O365_NavHeader h6,
+      #O365_NavHeader header,
+      #O365_NavHeader html,
+      #O365_NavHeader i,
+      #O365_NavHeader iframe,
+      #O365_NavHeader img,
+      #O365_NavHeader ins,
+      #O365_NavHeader kbd,
+      #O365_NavHeader label,
+      #O365_NavHeader legend,
+      #O365_NavHeader li,
+      #O365_NavHeader mark,
+      #O365_NavHeader menu,
+      #O365_NavHeader nav,
+      #O365_NavHeader object,
+      #O365_NavHeader ol,
+      #O365_NavHeader p,
+      #O365_NavHeader pre,
+      #O365_NavHeader q,
+      #O365_NavHeader samp,
+      #O365_NavHeader section,
+      #O365_NavHeader small,
+      #O365_NavHeader strong,
+      #O365_NavHeader sub,
+      #O365_NavHeader summary,
+      #O365_NavHeader sup,
+      #O365_NavHeader table,
+      #O365_NavHeader tbody,
+      #O365_NavHeader td,
+      #O365_NavHeader tfoot,
+      #O365_NavHeader th,
+      #O365_NavHeader thead,
+      #O365_NavHeader time,
+      #O365_NavHeader tr,
+      #O365_NavHeader ul,
+      #O365_NavHeader var,
+      #O365_NavHeader video,
+      #O365fpcontainerid abbr,
+      #O365fpcontainerid address,
+      #O365fpcontainerid article,
+      #O365fpcontainerid aside,
+      #O365fpcontainerid audio,
+      #O365fpcontainerid b,
+      #O365fpcontainerid blockquote,
+      #O365fpcontainerid body,
+      #O365fpcontainerid body :focus,
+      #O365fpcontainerid body div,
+      #O365fpcontainerid caption,
+      #O365fpcontainerid cite,
+      #O365fpcontainerid code,
+      #O365fpcontainerid dd,
+      #O365fpcontainerid del,
+      #O365fpcontainerid details,
+      #O365fpcontainerid dfn,
+      #O365fpcontainerid dl,
+      #O365fpcontainerid dt,
+      #O365fpcontainerid em,
+      #O365fpcontainerid fieldset,
+      #O365fpcontainerid figure,
+      #O365fpcontainerid footer,
+      #O365fpcontainerid form,
+      #O365fpcontainerid h1,
+      #O365fpcontainerid h2,
+      #O365fpcontainerid h3,
+      #O365fpcontainerid h4,
+      #O365fpcontainerid h5,
+      #O365fpcontainerid h6,
+      #O365fpcontainerid header,
+      #O365fpcontainerid html,
+      #O365fpcontainerid i,
+      #O365fpcontainerid iframe,
+      #O365fpcontainerid img,
+      #O365fpcontainerid ins,
+      #O365fpcontainerid kbd,
+      #O365fpcontainerid label,
+      #O365fpcontainerid legend,
+      #O365fpcontainerid li,
+      #O365fpcontainerid mark,
+      #O365fpcontainerid menu,
+      #O365fpcontainerid nav,
+      #O365fpcontainerid object,
+      #O365fpcontainerid ol,
+      #O365fpcontainerid p,
+      #O365fpcontainerid pre,
+      #O365fpcontainerid q,
+      #O365fpcontainerid samp,
+      #O365fpcontainerid section,
+      #O365fpcontainerid small,
+      #O365fpcontainerid strong,
+      #O365fpcontainerid sub,
+      #O365fpcontainerid summary,
+      #O365fpcontainerid sup,
+      #O365fpcontainerid table,
+      #O365fpcontainerid tbody,
+      #O365fpcontainerid td,
+      #O365fpcontainerid tfoot,
+      #O365fpcontainerid th,
+      #O365fpcontainerid thead,
+      #O365fpcontainerid time,
+      #O365fpcontainerid tr,
+      #O365fpcontainerid ul,
+      #O365fpcontainerid var,
+      #O365fpcontainerid video,
+      .o365shell-popup abbr,
+      .o365shell-popup address,
+      .o365shell-popup article,
+      .o365shell-popup aside,
+      .o365shell-popup audio,
+      .o365shell-popup b,
+      .o365shell-popup blockquote,
+      .o365shell-popup body,
+      .o365shell-popup body :focus,
+      .o365shell-popup body div,
+      .o365shell-popup caption,
+      .o365shell-popup cite,
+      .o365shell-popup code,
+      .o365shell-popup dd,
+      .o365shell-popup del,
+      .o365shell-popup details,
+      .o365shell-popup dfn,
+      .o365shell-popup dl,
+      .o365shell-popup dt,
+      .o365shell-popup em,
+      .o365shell-popup fieldset,
+      .o365shell-popup figure,
+      .o365shell-popup footer,
+      .o365shell-popup form,
+      .o365shell-popup h1,
+      .o365shell-popup h2,
+      .o365shell-popup h3,
+      .o365shell-popup h4,
+      .o365shell-popup h5,
+      .o365shell-popup h6,
+      .o365shell-popup header,
+      .o365shell-popup html,
+      .o365shell-popup i,
+      .o365shell-popup iframe,
+      .o365shell-popup img,
+      .o365shell-popup ins,
+      .o365shell-popup kbd,
+      .o365shell-popup label,
+      .o365shell-popup legend,
+      .o365shell-popup li,
+      .o365shell-popup mark,
+      .o365shell-popup menu,
+      .o365shell-popup nav,
+      .o365shell-popup object,
+      .o365shell-popup ol,
+      .o365shell-popup p,
+      .o365shell-popup pre,
+      .o365shell-popup q,
+      .o365shell-popup samp,
+      .o365shell-popup section,
+      .o365shell-popup small,
+      .o365shell-popup strong,
+      .o365shell-popup sub,
+      .o365shell-popup summary,
+      .o365shell-popup sup,
+      .o365shell-popup table,
+      .o365shell-popup tbody,
+      .o365shell-popup td,
+      .o365shell-popup tfoot,
+      .o365shell-popup th,
+      .o365shell-popup thead,
+      .o365shell-popup time,
+      .o365shell-popup tr,
+      .o365shell-popup ul,
+      .o365shell-popup var,
+      .o365shell-popup video {
+        box-sizing: content-box
+      }
+    </style>
+    <style type="text/css">
+      .mssxsb-searchBox {
+        display: flex;
+        position: var(--mssxsb-pos);
+        font: 14px SegoeUI-Regular-final, Segoe UI, "Segoe UI Web (West European)", Segoe, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, Tahoma, Helvetica, Arial, sans-serif;
+        color: var(--mssxsb-color);
+        background: var(--mssxsb-bg);
+        border-radius: var(--mssxsb-borderRadius);
+        height: 32px;
+        text-align: left;
+        align-self: center;
+        box-shadow: var(--mssxsb-shadow);
+        width: var(--mssxsb-width);
+        max-width: var(--mssxsb-maxWidth);
+        margin: var(--mssxsb-margin, auto)
+      }
+
+      .mssxsb-searchBox:hover,
+      .mssxsb-searchBox.mssxsb-active,
+      .mssxsb-searchBox[active=true] {
+        box-shadow: var(--mssxsb-shadowHover)
+      }
+
+      .mssxsb-searchBox.mssxsb-filled,
+      .mssxsb-searchBox[filled=true] {
+        background-color: var(--mssxsb-bgHover)
+      }
+
+      .mssxsb-form {
+        display: flex;
+        flex: 1 1 100%;
+        height: 100%;
+        border-radius: inherit
+      }
+
+      @media screen and (-ms-high-contrast:white-on-black) {
+        .mssxsb-form {
+          border: 1px solid #fff
+        }
+      }
+
+      @media screen and (-ms-high-contrast:black-on-white) {
+        .mssxsb-form {
+          border: 1px solid #000
+        }
+      }
+
+      .mssxsb-input {
+        font: inherit;
+        flex: 1 1 0;
+        color: inherit !important;
+        background: transparent;
+        border: 0;
+        border-radius: inherit;
+        padding: 0;
+        outline: 0
+      }
+
+      .mssxsb-input::-webkit-search-cancel-button,
+      .mssxsb-input::-webkit-search-decoration,
+      .mssxsb-input::-webkit-search-results-button,
+      .mssxsb-input::-webkit-search-results-decoration {
+        appearance: none;
+        display: none
+      }
+
+      .mssxsb-input::-webkit-input-placeholder {
+        color: var(--mssxsb-phColor)
+      }
+
+      .mssxsb-input:-ms-input-placeholder {
+        color: var(--mssxsb-phColor)
+      }
+
+      .mssxsb-input::placeholder {
+        color: var(--mssxsb-phColor)
+      }
+
+      .mssxsb-mag {
+        background: transparent;
+        border: 0;
+        flex: 0 0 48px;
+        font-size: 16px;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        color: var(--mssxsb-theme-palette-themeDarkAlt, #106ebe);
+        fill: var(--mssxsb-theme-palette-themeDarkAlt, #106ebe)
+      }
+
+      .mssxsb-mag:before {
+        position: relative;
+        bottom: -1px;
+        left: 2px
+      }
+
+      .mssxsb-mag[dir=rtl] {
+        transform: scaleX(-1)
+      }
+
+      @media screen and (-ms-high-contrast:white-on-black) {
+        .mssxsb-mag {
+          color: #fff;
+          fill: #fff
+        }
+      }
+
+      .mssxsb-popup {
+        left: 0
+      }
+    </style>
+    <style></style>
+    <style type="text/css">
+      @charset "UTF-8";
+
+      @font-face {
+        font-family: ShellFabricMDL2IconsLite;
+        src: url(data:font/woff;charset=utf-8;base64,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) format("woff");
+        font-display: auto
+      }
+
+      .o365cs-base [class*=" ms-Icon--"],
+      .o365cs-base [class*=" ms-Icon--"]:before,
+      .o365cs-base [class^=ms-Icon--],
+      .o365cs-base [class^=ms-Icon--]:before {
+        font-family: ShellFabricMDL2IconsLite, ShellFabricMDL2Icons;
+        display: inline-block;
+        line-height: 1
+      }
+
+      .o365cs-base [class*=" ms-Icon--"]:before,
+      .o365cs-base [class^=ms-Icon--]:before {
+        font-style: normal;
+        font-weight: 400;
+        text-decoration: inherit;
+        text-align: center;
+        font-variant: normal;
+        text-transform: none;
+        width: auto;
+        margin-left: 0;
+        margin-right: 0
+      }
+
+      .o365cs-base .ms-icon-font-circle:before {
+        border-style: solid;
+        border-radius: 1em;
+        line-height: 1.15;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        padding: .1em
+      }
+
+      @media screen and (-webkit-min-device-pixel-ratio:0) {
+        .o365cs-base .ms-icon-font-circle:before {
+          line-height: 1
+        }
+      }
+
+      .o365cs-base .ms-icon-font-size-8 {
+        font-size: 8 !important
+      }
+
+      .o365cs-base .ms-icon-font-size-11 {
+        font-size: 11 !important
+      }
+
+      .o365cs-base .ms-icon-font-size-12 {
+        font-size: 12 !important
+      }
+
+      .o365cs-base .ms-icon-font-size-14 {
+        font-size: 14 !important
+      }
+
+      .o365cs-base .ms-icon-font-size-18 {
+        font-size: 18 !important
+      }
+
+      .o365cs-base .ms-icon-font-size-20 {
+        font-size: 20 !important
+      }
+
+      .o365cs-base .ms-icon-font-size-22 {
+        font-size: 22 !important
+      }
+
+      .o365cs-base .ms-icon-font-size-25 {
+        font-size: 25 !important
+      }
+
+      .o365cs-base .ms-icon-font-size-26 {
+        font-size: 26 !important
+      }
+
+      .o365cs-base .ms-icon-font-size-35 {
+        font-size: 35 !important
+      }
+
+      .o365cs-base [data-icon]:before {
+        content: attr(data-icon)
+      }
+
+      .o365cs-base .ms-Icon--WaffleOffice365:before {
+        content: ""
+      }
+
+      .o365cs-base .ms-Icon--Search:before {
+        content: ""
+      }
+
+      .o365cs-base .ms-Icon--Contact:before {
+        content: ""
+      }
+    </style>
+    <style type="text/css">
+      .gJJv\/2Ya3NrcOitroClSSw\=\= {
+        height: 50px
+      }
+
+      .M7RMk624fi5g\/EJCqDnwxQ\=\= {
+        height: 48px
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="https://res.cdn.office.net/owamail/hashed-v1/scripts/owa.MailBoot.m.41fc7c39.css" crossorigin="anonymous">
+  </head>
+  <body role="application" class="ms-font-s disableTextSelection ms-Fabric--isFocusHidden" style="min-width: 418px;">
+    <div id="app"></div>
+    <div id="loadingScreen">
+      <div id="loadingLogo" dir="ltr">
+        <style>
+          :root {
+            --s: 180px;
+            --envW: 130px;
+            --envH: 71px;
+            --calW: 118px;
+            --sqW: calc(var(--calW) / 3);
+            --sqH: 37px;
+            --calHH: 20px;
+            --calH: calc(var(--sqH) * 3 + var(--calHH));
+            --calY: calc(var(--calH) + 20px);
+            --calYExt: calc(var(--calH) - 80px);
+            --calYOverExt: calc(var(--calH) - 92px);
+            --flapS: 96px;
+            --flapH: calc(0.55 * var(--envH));
+            --flapScaleY: calc(var(--flapH) / var(--flapWidth));
+            --dur: 5s
+          }
+
+          #container {
+            width: var(--s);
+            height: var(--s);
+            animation: bounce var(--dur) infinite
+          }
+
+          @keyframes bounce {
+
+            0%,
+            100%,
+            12.5%,
+            32.5%,
+            76.1% {
+              transform: translateY(0)
+            }
+
+            22.5%,
+            86% {
+              transform: translateY(7px)
+            }
+          }
+
+          #logo {
+            height: 179px;
+            width: 130px;
+            overflow: hidden;
+            margin-top: -59px;
+            margin-left: 25px
+          }
+
+          #containerShadow {
+            position: relative;
+            top: 120px;
+            left: 25px;
+            width: var(--envW);
+            height: var(--envH);
+            border-radius: 0 0 7px 7px;
+            box-shadow: rgba(0, 0, 0, .25) 0 4px 5px;
+            animation: shadow-fade var(--dur) infinite
+          }
+
+          @keyframes shadow-fade {
+
+            0%,
+            100%,
+            21.2%,
+            80% {
+              opacity: 0
+            }
+
+            47%,
+            70% {
+              opacity: 1
+            }
+          }
+
+          #flapContainer {
+            width: var(--envW);
+            margin-top: 179px
+          }
+
+          #ef {
+            width: var(--envW);
+            height: var(--envH);
+            border-radius: 0 0 7px 7px;
+            overflow: hidden;
+            margin-top: -41px
+          }
+
+          #ef>.l {
+            width: 287px;
+            height: var(--envH);
+            background: #28a8ea;
+            transform: translate(-153px, -70px) rotate(28deg)
+          }
+
+          #ef>.r {
+            width: 287px;
+            height: var(--envH);
+            background: #1490df;
+            transform: translate(-120px, 63px) rotate(-28deg)
+          }
+
+          #eb {
+            width: var(--envW);
+            height: 40px;
+            background: #123b6d;
+            margin-top: -70px
+          }
+
+          #cal {
+            display: flex;
+            flex-wrap: wrap;
+            width: var(--calW);
+            height: var(--calH);
+            border-radius: 7px;
+            overflow: hidden;
+            margin: 0 auto;
+            margin-top: -306px;
+            animation: cal-bounce var(--dur) infinite;
+            animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
+            transform: translateY(var(--calYExt)) scaleY(1)
+          }
+
+          @keyframes cal-bounce {
+
+            0%,
+            100%,
+            16.5%,
+            76.1% {
+              transform: translateY(var(--calY)) scaleY(1)
+            }
+
+            28% {
+              transform: translateY(var(--calYOverExt)) scaleY(1)
+            }
+
+            31% {
+              transform: translateY(var(--calYExt)) scaleY(1.05)
+            }
+
+            33% {
+              transform: translateY(var(--calYExt)) scaleY(.96)
+            }
+
+            34%,
+            68.5% {
+              transform: translateY(var(--calYExt)) scaleY(1)
+            }
+
+            68.5% {
+              animation-timing-function: cubic-bezier(0.66, -0.16, 1, -0.29)
+            }
+          }
+
+          #cal>.t {
+            width: var(--calW);
+            height: calc(var(--calHH) + 1px);
+            margin-bottom: -1px;
+            background: #0358a7
+          }
+
+          #cal>.r {
+            display: flex;
+            width: var(--calW);
+            height: var(--sqH)
+          }
+
+          .s {
+            width: var(--sqW);
+            height: calc(var(--sqH) + 1px)
+          }
+
+          .s1 {
+            background: #0078d4
+          }
+
+          .s2 {
+            background: #28a8ea
+          }
+
+          .s3 {
+            background: #50d9ff
+          }
+
+          .s4 {
+            background: #0364b8
+          }
+
+          .s5 {
+            background: #14447d
+          }
+
+          #openedFlap {
+            width: var(--envW);
+            height: 107px;
+            animation: opened-flap-swing var(--dur) infinite;
+            animation-timing-function: cubic-bezier(0.32, 0, 0.67, 0);
+            transform-origin: top;
+            transform: translateY(-68px) rotate3d(1, 0, 0, -180deg)
+          }
+
+          @keyframes opened-flap-swing {
+
+            0%,
+            100%,
+            14.5%,
+            76% {
+              transform: translateY(-68px) rotate3d(1, 0, 0, -90deg)
+            }
+
+            16.5%,
+            74% {
+              transform: translateY(-68px) rotate3d(1, 0, 0, -180deg)
+            }
+          }
+
+          #closedFlap {
+            width: var(--envW);
+            animation: closed-flap-swing var(--dur) infinite;
+            animation-timing-function: cubic-bezier(0.32, 0, 0.67, 0);
+            transform-origin: top;
+            transform: translateY(calc(-1 * var(--envH))) rotate3d(1, 0, 0, 90deg)
+          }
+
+          @keyframes closed-flap-swing {
+
+            0%,
+            100%,
+            77%,
+            8.5% {
+              transform: translateY(calc(-1 * var(--envH))) rotate3d(1, 0, 0, 0)
+            }
+
+            14.5%,
+            76% {
+              transform: translateY(calc(-1 * var(--envH))) rotate3d(1, 0, 0, 90deg)
+            }
+          }
+
+          #fmask {
+            width: var(--envW);
+            height: 107px;
+            overflow: hidden
+          }
+
+          .flapTriangle {
+            width: var(--flapS);
+            height: var(--flapS);
+            background: #50d9ff;
+            margin: -48px auto 0 auto;
+            border-radius: 7px;
+            transform: scaleY(.6) rotate(45deg)
+          }
+
+          #openedFlap .flapTriangle {
+            background: #123b6d
+          }
+
+          #closedFlap .flapTriangle {
+            background: #50d9ff
+          }
+        </style>
+        <div id="container">
+          <div id="containerShadow"></div>
+          <div id="logo">
+            <div id="flapContainer">
+              <div id="openedFlap">
+                <div id="fmask">
+                  <div class="flapTriangle"></div>
+                </div>
+              </div>
+              <div id="cal">
+                <div class="t"></div>
+                <div class="r">
+                  <div class="s s1"></div>
+                  <div class="s s2"></div>
+                  <div class="s s3"></div>
+                </div>
+                <div class="r">
+                  <div class="s s4"></div>
+                  <div class="s s1"></div>
+                  <div class="s s2"></div>
+                </div>
+                <div class="r">
+                  <div class="s s5"></div>
+                  <div class="s s4"></div>
+                  <div class="s s1"></div>
+                </div>
+              </div>
+            </div>
+            <div id="eb"></div>
+            <div id="ef">
+              <div class="r"></div>
+              <div class="l"></div>
+            </div>
+            <div id="closedFlap">
+              <div id="fmask">
+                <div class="flapTriangle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src="//res.cdn.office.net/assets/framework/microsoft.svg" id="MSLogo" alt="Microsoft">
+    </div>
+  </body>
+</html>
